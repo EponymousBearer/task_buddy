@@ -42,7 +42,7 @@ app = FastAPI(lifespan=lifespan, title="Hello World API with DB",
     version="0.0.1",
     servers=[
         {
-            "url": "http://bug-amusing-formally.ngrok-free.app", # ADD NGROK URL Here Before Creating GPT Action
+            "url": "https://bug-amusing-formally.ngrok-free.app", # ADD NGROK URL Here Before Creating GPT Action
             "description": "Development Server"
         }
         ])
