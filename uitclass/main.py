@@ -54,7 +54,7 @@ def get_session():
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World Part 2"}
+    return {"Hello": "World"}
 
 @app.post("/todos/", response_model=Todo)
 def create_todo(todo: Todo, session: Annotated[Session, Depends(get_session)]):
