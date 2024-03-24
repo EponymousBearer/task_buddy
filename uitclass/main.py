@@ -87,7 +87,6 @@ def read_root():
 
 @app.post("/todo/", response_model=Todo, status_code=status.HTTP_201_CREATED)
 async def create_todo_task(todo: Todo, session: Annotated[Session,Depends(get_session)]):
-    # Creating a new Todo item with all the provided details
     db_todo = Todo(
         title=todo.title,
         content=todo.content,
@@ -95,8 +94,8 @@ async def create_todo_task(todo: Todo, session: Annotated[Session,Depends(get_se
         priority=todo.priority,
         status=todo.status,
         description=todo.description,
-        created_at=datetime.now(timezone.utc),  # Automatically set the creation time
-        updated_at=datetime.now(timezone.utc)  # Automatically set the update time
+        created_at=datetime.now(timezone.utc),
+        updated_at=datetime.now(timezone.utc)  
     )
     session.add(db_todo)
     session.commit()
